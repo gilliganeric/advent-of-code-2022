@@ -16,6 +16,8 @@ def main():
     with open(args.input) as f:
         data = [line.rstrip() for line in f]
 
+    print(data)
+
 
 if __name__ == "__main__":
     main()
