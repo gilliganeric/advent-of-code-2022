@@ -11,7 +11,9 @@ def main():
             continue
         calories_total += int(el)
 
-    print(f"The elf carrying the most Calories is carrying {max(elves)} Calories")
+    elves.sort(reverse=True)
+    print(f"Part1: The elf carrying the most Calories is carrying {max(elves)} Calories")
+    print(f"Part2: The top three elves are carrying {sum(elves[0:3])} Calories")
 
 
 if __name__=="__main__":
