@@ -1,5 +1,5 @@
 def main():
-    with open("input/sample.data") as f:
+    with open("input/input") as f:
         data = [line.rstrip() for line in f]
         
     elves = []
