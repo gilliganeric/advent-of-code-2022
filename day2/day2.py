@@ -20,11 +20,27 @@ def main():
         'X': 1,
         'Y': 2,
         'Z': 3,
+        'A': 1,
+        'B': 2,
+        'C': 3,
     }
     LOSE = 0
     DRAW = 3
     WIN = 6
-    outcome_score = {
+    player_shape = {
+        'A X': 'Z',
+        'A Y': 'X',
+        'A Z': 'Y',
+
+        'B X': 'X',
+        'B Y': 'Y',
+        'B Z': 'Z',
+
+        'C X': 'Y',
+        'C Y': 'Z',
+        'C Z': 'X',
+    }
+    outcome_score_part1 = {
         'A X': DRAW,
         'A Y': WIN,
         'A Z': LOSE,
@@ -37,14 +53,22 @@ def main():
         'C Y': LOSE,
         'C Z': DRAW,
     }
+    outcome_score_part2 = {
+        'X': LOSE,
+        'Y': DRAW,
+        'Z': WIN
+    }
 
-    total_score = 0
+    total_score_part1 = total_score_part2 = 0
     for round in data:
         player = round.split(' ')[1]
-        score = shape_score[player] + outcome_score[round]
-        total_score += score
+        score_part1 = shape_score[player] + outcome_score_part1[round]
+        score_part2 = shape_score[player_shape[round]] + outcome_score_part2[player]
+        total_score_part1 += score_part1
+        total_score_part2 += score_part2
 
-    print(total_score)
+    print(total_score_part1)
+    print(total_score_part2)
 
 
 if __name__ == "__main__":
