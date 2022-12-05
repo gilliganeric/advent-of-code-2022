@@ -4,7 +4,11 @@ Solution for https://adventofcode.com/2022/day/4
 import argparse
 
 def a_contains_b(a, b):
-    if int(a[0]) <= int(b[0]) and int(a[1]) >= int(b[1]):
+    a_range = range(int(a[0]), int(a[1]) + 1)
+    b_range = range(int(b[0]), int(b[1]) + 1)
+    a_set = set(a_range)
+    b_set = set(b_range)
+    if a_set.issuperset(b_set):
         return True
     return False
 
