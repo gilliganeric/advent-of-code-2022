@@ -1,5 +1,5 @@
 """
-Solution for https://adventofcode.com/2022/day/2
+Solution for https://adventofcode.com/2022/day/3
 """
 import argparse
 
